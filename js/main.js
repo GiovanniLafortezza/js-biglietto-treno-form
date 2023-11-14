@@ -3,7 +3,7 @@
 // Passo 3: clacolare il prezzo totale del biglietto tenendo presente:
 // prezzo biglietto (0.21 £ al km) - 20% di sconto ai minorenni - 40% di sconto per gli over 65
 
-let km = prompt("Inserisci il numero di km da percorrere");
+/*let km = prompt("Inserisci il numero di km da percorrere");
 let age = prompt("Inserisci la tua età");
 
 km = parseFloat(km);
