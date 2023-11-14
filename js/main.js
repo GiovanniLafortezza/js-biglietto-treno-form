@@ -1,37 +1,19 @@
-// Passo 1: chiedere all'utente il numero di km da percorrere
-// Passo 2: chiedere l'età del passeggero
-// Passo 3: clacolare il prezzo totale del biglietto tenendo presente:
-// prezzo biglietto (0.21 £ al km) - 20% di sconto ai minorenni - 40% di sconto per gli over 65
+function userHasFinishDataCompletion(event) {
+    event.preventDefault();
 
-/*let km = prompt("Inserisci il numero di km da percorrere");
-let age = prompt("Inserisci la tua età");
+    let nameSurname = document.getElementById("nameSurname").value;
+    let km = document.getElementById("km").value;
+    let favoriteColor = document.getElementById("favourite_color").value;
 
-km = parseFloat(km);
-age = parseInt(age);
+    let random = Math.floor(Math.random() * 41);
 
-// costo biglietto
-let priceTicket = km * 0.21;
-let prezzoPercentuale;
+    let password = name + surname + favoriteColor + random;
 
-console.log(priceTicket);
+    document.getElementById("user_password").innerHTML = password;
 
-// sconto del 20% se è minorenne
-if(age < 18)  {
-prezzoPercentuale = (priceTicket * 20) / 100;
-console.log(prezzoPercentuale);
-priceTicket = priceTicket - prezzoPercentuale;
-
-// sconto del 40% se è over 65
-} else if(age >= 65) {
-    prezzoPercentuale = (priceTicket * 40) / 100;
-    console.log(prezzoPercentuale);
-    priceTicket = priceTicket - prezzoPercentuale;
-    
-} 
-
-// mostra massimo due decimali al risultato
-priceTicket = priceTicket.toFixed(2);
-console.log(priceTicket);
-
-alert("Il prezzo del tuo biglietto è di " + priceTicket + " " + "euro");
+    // Tolgo il form, una volta che l'utente ha finito di completarlo
+    document.getElementById("form_data_input").classList.add("d-none");
+    // E faccio comparire la card con la password generata
+    document.getElementById("card_password").classList.remove("d-none");
+}
 
