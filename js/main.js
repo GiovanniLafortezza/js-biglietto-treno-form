@@ -1,19 +1,39 @@
 function userHasFinishDataCompletion(event) {
     event.preventDefault();
 
-    let nameSurname = document.getElementById("nameSurname").value;
+    let nameSurname = document.getElementById("name_surname").value;
+
     let km = document.getElementById("km").value;
-    let favoriteColor = document.getElementById("favourite_color").value;
 
-    let random = Math.floor(Math.random() * 41);
+    let age = document.getElementById("age").value;
 
-    let password = name + surname + favoriteColor + random;
+    let priceTicket = km * 0.21;
 
-    document.getElementById("user_password").innerHTML = password;
+    if (age == 'Minorenne') {
+        priceTicket -= priceTicket * 0.2;
+    } else if (age == 'Anziano') {
+        priceTicket -= priceTicket * 0.4;
+    }
 
-    // Tolgo il form, una volta che l'utente ha finito di completarlo
-    document.getElementById("form_data_input").classList.add("d-none");
-    // E faccio comparire la card con la password generata
-    document.getElementById("card_password").classList.remove("d-none");
+    priceTicket = priceTicket.toFixed(2);
+
+    document.getElementById("price_ticket").innerHTML = priceTicket;
+
+    console.log(priceTicket);
+
+    let ticket = document.getElementById('ticket');
+    ticket.classList.remove('d-none');
+
+    let ticketCard = document.getElementById('ticket_card');
+    ticketCard.classList.remove('d-none');
+
+    document.getElementById('name_surname').innerHTML = nameSurname;
+
+    document.getElementById('type_ticket').innerHTML = age;
+
+    document.getElementById('car').innerHTML = Math.floor(Math.random() * 10) + 1;;
+
+    document.getElementById("cp").innerHTML = Math.floor(Math.random() * 10000) + 90001;
+
 }
 
