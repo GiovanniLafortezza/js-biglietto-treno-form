@@ -27,7 +27,7 @@ function userHasFinishDataCompletion(event) {
     let ticketCard = document.getElementById('ticket_card');
     ticketCard.classList.remove('d-none');
 
-    document.getElementById('name_surname').innerHTML = nameSurname;
+    document.getElementById('user_name').innerHTML = nameSurname;
 
     document.getElementById('type_ticket').innerHTML = age;
 
